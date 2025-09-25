@@ -16,7 +16,7 @@ export function HeroSection() {
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <h1
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-primary mb-6 tracking-tight"
+          className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary mb-6 tracking-tight whitespace-nowrap"
           style={{ fontFamily: "var(--font-playfair)" }}
         >
           C A S A N O V A
