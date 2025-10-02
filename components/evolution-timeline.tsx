@@ -7,8 +7,7 @@ export function EvolutionTimeline() {
       title: "The Stone Avenue Formation",
       description:
         "Born from the collective passion for blues and rock, The Stone Avenue began their journey as a band.",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/315527545_3231084310539999_106860494818731701_n.jpg-uCNvKyZIKRvlw9g9eVF2PKdkvNxgtf.jpeg",
+      image: "/24910121_1882575448724232_5559880452408873517_n.jpg",
     },
     {
       year: "2020",
