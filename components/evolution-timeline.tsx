@@ -29,7 +29,7 @@ export function EvolutionTimeline() {
       year: "2025",
       title: "Solo Evolution",
       description: "Casanova emerges - the natural evolution from collective harmony to individual blues expression.",
-      image: "/placeholder-upr93.png",
+      image: "/67084916_2261840830797690_478171898908246016_n.jpg",
     },
   ]
 
