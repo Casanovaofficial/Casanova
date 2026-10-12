@@ -1,0 +1,69 @@
+# ─────────────────────────────────────────────
+#  Jarvis — local voice assistant configuration
+# ─────────────────────────────────────────────
+assistant_name: Jarvis
+
+# Your name, so it can address you and know whose machine this is.
+user_name: Erick
+
+# Press any of these anywhere in Windows to bring Jarvis up and talk immediately,
+# with no wake word needed. <cmd> is the Windows key.
+# Win+Alt+J is deliberately chosen: Windows itself claims no Win+Alt+<letter>
+# combination, so it will not collide with anything built in.
+hotkeys:
+  - "<cmd>+<alt>+j"
+  - "<ctrl>+<alt>+j"
+
+# Kept for the Settings window, which edits a single shortcut.
+hotkey: "<cmd>+<alt>+j"
+
+# Whisper sometimes hears the name slightly differently — add variants here.
+wake_words: ["jarvis", "yarvis", "jervis", "jarvi", "charvis", "service", "travis", "harvis", "java", "jarvez"]
+
+# After it answers, you can keep talking without the wake word for N seconds.
+# Longer makes it feel like a conversation rather than a series of commands.
+follow_up_s: 25
+
+# Force English. Use "es" for Spanish, or "auto" to detect per sentence.
+language: en
+
+llm:
+  host: http://127.0.0.1:11434
+  # Good options:  qwen2.5:7b (best balance, 8GB+ VRAM or 16GB RAM)
+  #                qwen2.5:3b (weaker PCs)   qwen2.5:14b (strong GPU)
+  model: qwen2.5:7b
+  temperature: 0.3
+  max_tool_rounds: 10
+  history_messages: 30
+
+stt:
+  model_size: small        # tiny | base | small | medium  (bigger = more accurate, slower)
+  device: auto             # auto | cpu | cuda
+  compute_type: int8
+
+audio:
+  sample_rate: 16000
+  vad_aggressiveness: 2    # 0-3, higher = ignores more background noise
+  silence_ms: 800          # pause length that ends a sentence
+  max_utterance_s: 25
+
+tts:
+  rate: 185
+  # Optional: part of a voice name to force, e.g. "Sabina" (Spanish MX) or "Zira" (English)
+  voice_es: ""
+  voice_en: ""
+
+# Noticing things on its own. It stays quiet unless what it sees clears a high
+# bar, never interrupts while you are talking to it, and speaks at most once per
+# interval. Set enabled: false if it ever becomes noise.
+proactive:
+  enabled: true
+  interval_minutes: 20
+  only_after_idle_minutes: 5
+
+safety:
+  confirm_dangerous: true  # asks out loud before deleting, killing processes, etc.
+  allowed_roots: []        # folders Jarvis may write/delete in. Empty = your home folder.
+
+memory:
+  file: data/memory.json

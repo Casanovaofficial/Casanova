@@ -1,0 +1,10 @@
+{
+  "_comment": "Template. Copy to memory.json and write your own facts. memory.json is gitignored so your personal details never leave your machine.",
+  "facts": [
+    "Your name and where you are based.",
+    "What you do for work, and the companies involved.",
+    "Languages you speak, and which one to default to.",
+    "Tools you use daily, so it does not explain the basics to you.",
+    "How you like it to respond, for example action first, short answers."
+  ]
+}
